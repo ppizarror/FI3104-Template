@@ -3,11 +3,11 @@
 
 # Pycharm.
 .idea/
+pycharm/
 
 # Pydev.
 .project
 .pydevproject
-pycharm/
 
 # Eclipse.
 .settings/
@@ -20,3 +20,13 @@ Thumbs.db
 
 # Archivos residuales de VIM.
 *.swp
+
+# Archivos de latex
+*.out
+*.aux
+*.log
+*.log
+*.toc
+*.lof
+*.lot
+*.synctex.gz
