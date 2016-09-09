@@ -119,6 +119,7 @@
 \usepackage{url}                      % Permite añadir enlaces
 \usepackage[version=4]{mhchem}        % Fórmulas químicas
 \usepackage{ulem}                     % Permite tachar, subrayar, etc
+\usepackage{wasysym}                  % Contiene carácteres misceláneos
 \usepackage{wrapfig}                  % Permite comprimir imágenes
 
 % LIBRERÍAS DEPENDIENTES
@@ -164,10 +165,11 @@
 \newcommand{\newsubtitleanumnoi}[1]{  % Insertar un subtítulo sin num. fuera del índice
 	\subsection*{#1}}
 \newcommand{\insertequation}[2][]{    % Insertar una ecuación
-	\vspace{-0.2cm}
+	\vspace{-0.18cm}
 	\begin{equation}
 		\text{#1} #2
 	\end{equation}}
+    \vspace{0.18cm}
 \newcommand{\insertequationcaptioned}[3][]{ % Insertar una ecuación con leyenda
 	\vspace{-0.1cm}
 	\begin{equation}
