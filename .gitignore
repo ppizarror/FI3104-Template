@@ -21,12 +21,18 @@ Thumbs.db
 # Archivos residuales de VIM.
 *.swp
 
-# Archivos de latex
-*.out
+# Archivos resultantes de la compilación de LaTeX.
 *.aux
-*.log
-*.log
-*.toc
 *.lof
+*.log
 *.lot
+*.out
 *.synctex.gz
+*.tex
+*.toc
+
+# Archivos de gráficos
+graphs.py
+
+# Resultados
+resultados.xlsx

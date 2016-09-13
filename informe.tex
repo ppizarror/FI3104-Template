@@ -1,5 +1,5 @@
 % Template:     Informe/Reporte LaTeX
-% Versión:      2.0.1 (06/09/2016)
+% Versión:      2.0.2 (12/09/2016)
 % Codificación: UTF-8
 %
 % Autor: Pablo Pizarro R.
@@ -9,14 +9,14 @@
 % Licencia: CC BY-NC-SA 4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 % CREACIÓN DEL DOCUMENTO, FUENTE E IDIOMA
-\documentclass[letterpaper,11pt]{article} % Articulo tamaño carta, fuente de 11pt
-\usepackage[utf8]{inputenc}               % Codificación UTF-8
-\usepackage[T1]{fontenc}                  % Soporta caracteres acentuados
-\usepackage{lmodern}                      % Tipografía moderna
-\usepackage[spanish]{babel}               % Define el idioma del documento en español
+\documentclass[letterpaper,11pt]{article}  % Articulo tamaño carta, fuente de 11pt
+\usepackage[utf8]{inputenc}                % Codificación UTF-8
+\usepackage[T1]{fontenc}                   % Soporta caracteres acentuados
+\usepackage{lmodern}                       % Tipografía moderna
+\usepackage[spanish]{babel}                % Define el idioma del documento en español
 
 % INFORMACIÓN DEL DOCUMENTO
-\newcommand{\nombrealumno}{Pablo Pizarro R.}
+\newcommand{\nombrealumno}{Nombre Alumno}
 \newcommand{\nombredelinforme}{Título del informe}
 \newcommand{\temaatratar}{Tema a tratar}
 \newcommand{\fecharealizacion}{\today}
@@ -169,7 +169,7 @@
 	\begin{equation}
 		\text{#1} #2
 	\end{equation}}
-    \vspace{0.18cm}
+	\vspace{0.18cm}
 \newcommand{\insertequationcaptioned}[3][]{ % Insertar una ecuación con leyenda
 	\vspace{-0.1cm}
 	\begin{equation}
@@ -333,7 +333,6 @@
 	{\def\@noitemerr
 		{\@latex@warning{Empty `thebibliography' environment}}
 		\endlist\end{multicols}}
-\def\munderbar#1{\underline{\sbox\tw@{$#1$}\dp\tw@\z@\box\tw@}}
 \makeatother
 
 \begin{document}
@@ -378,6 +377,11 @@
 \renewcommand{\headrulewidth}{0.5pt}                 % Ancho de la barra del header
 \renewcommand{\footrulewidth}{0.5pt}                 % Ancho de la barra del footer
 
+% ABSTRACT- RESUMEN
+\sectionfont{\tipofuentetitulo \etipofuentetitulo \selectfont}
+\newtitleanum{Resumen}
+\lipsum[1]
+
 % TABLA DE CONTENIDOS
 \newpage
 \sectionfont{\tipofuentetituloi \etipofuentetituloi \selectfont}
@@ -396,28 +400,62 @@
 \renewcommand{\thepage}{\arabic{page}}
 
 % ================================ INICIO DEL DOCUMENTO ================================
+% EJEMPLO DE DOCUMENTO
 
 \section{Pregunta 1}
 
 	\subsection{Introducción}
 	
-		\lipsum[1]
+		Se busca integrar la siguiente ecuación diferencial:
+		
+		\insertequation[\label{ecuacion1}]{\bigg( \fracnderivat{}{r}{2} - \frac{2}{\pow{r}{2}}\bigg)\Phi(r) = -8 \pi r \pow{e}{-\pow{r}{2}}}
+		
+		Para $1 < r < \infty$, cumpliendo las condiciones de borde $\Phi(1)=1$ y $\Phi(\infty)=0$.
+
+		\newp Acá introduzco el problema a resolver, parámetros como las condiciones de borde, etc. Recuerden incluir toda la información necesaria para que alguien pueda reproducir su programa/resultados leyendo su informe - pero sean concisos, lo mejor es una explicación corta y clara.
 		
 	
 	\subsection{Procedimiento}
 	
-		\lipsum[2]
+		¿Cómo resolver el problema que planteamos recién? con algún algoritmo o método de resolución numérica. El método de ...., en este caso utilizamos...., etc, etc, por medio de la expresión
+		
+		\insertequation[\label{ecuacion2}]{ \Phi(r) = \bar{\Phi}(r) + \frac{\lpow{\Phi}{b} - \bar{\Phi}(b)}{\lpow{\Phi}{h}(b)}\lpow{\Phi}{h}(r)}
+		
+		Explicaciones cortas y claras. Aquí expliquen qué hicieron y con qué parámetros (por ejemplo, su valor de h o $\epsilon$).
 		
 	
 	\subsection{Resultados}
 	
-		\lipsum[3]
+		Aquí van los resultados de su tarea. Apóyense en tablas y gráficos, como muestra la Figura 1.
+		
+		\insertimage[\label{imagen1}]{ejemplo.png}{scale=0.6}{Un ejemplo de gráfico.}
 		
 	
 	\subsection{Conclusiones}
 	
-		\lipsum[4]
-
+		Análisis y conclusiones a partir de los resultados obtenidos. Cuiden que sus informes sean ordenados y coherentes, pueden agregar subsecciones donde lo consideren necesario.
+		
+		\begin{longtable}{ccc}
+			\caption{Ejemplo de tabla.}\label{foo}\\
+			\hline
+			Columna 1 & Columna 2 & Columna 3\\\hline
+			\endfirsthead
+			\hline
+			Columna 1 & Columna 2 & Columna 3\\
+			\hline
+			\endhead
+			\hline
+			\endfoot
+			\hline
+			\endlastfoot
+			$\omega$ & $\nu$ & $\delta$\\     
+			$\partial$ & $\nabla$ & $\mho$\\
+			$\beta$ & $\gamma$ & $\epsilon$\\   
+			$\varepsilon$ & $\upsilon$ & $\varphi$\\
+			$\Phi$ & $\Theta$ & $\varSigma$\\
+			$\omega$ & $\nu$ & $\delta$\\     
+			$\partial$ & $\nabla$ & $\mho$\\ 
+		\end{longtable}
 
 % FIN DEL DOCUMENTO
 \end{document}
