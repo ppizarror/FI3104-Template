@@ -3,6 +3,7 @@
 
 # Pycharm.
 .idea/
+pycharm/
 
 # Pydev.
 .project
