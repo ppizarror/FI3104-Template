@@ -1,20 +1,21 @@
-% Template:     Template-FI3104/Reporte LaTeX
-% Versión:      1.1 (15/09/2016)
+% Template:     Informe/Reporte LaTeX
+% Versión:      2.1.0 (29/09/2016)
 % Codificación: UTF-8
 %
 % Autor: Pablo Pizarro R.
 %        Facultad de Ciencias Físicas y Matemáticas.
 %        Universidad de Chile.
-%        pablo.pizarro@ing.uchile.cl
+%        pablo.pizarro@ing.uchile.cl, ppizarror.com
 %
-% Licencia: CC BY-NC-SA 4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
+% Licencia: CC BY-NC-SA 4.0 [http://creativecommons.org/licenses/by-nc-sa/4.0/]
+% Sitio web del proyecto: http://ppizarror.com/Template-Informe/
 
 % CREACIÓN DEL DOCUMENTO, FUENTE E IDIOMA
-\documentclass[letterpaper,11pt]{article}  % Articulo tamaño carta, fuente de 11pt
-\usepackage[utf8]{inputenc}                % Codificación UTF-8
-\usepackage[T1]{fontenc}                   % Soporta caracteres acentuados
-\usepackage{lmodern}                       % Tipografía moderna
-\usepackage[spanish]{babel}                % Define el idioma del documento en español
+\documentclass[letterpaper,11pt]{article} % Articulo tamaño carta, fuente de 11pt
+\usepackage[utf8]{inputenc}               % Codificación UTF-8
+\usepackage[T1]{fontenc}                  % Soporta caracteres acentuados
+\usepackage{lmodern}                      % Tipografía moderna
+\usepackage[spanish]{babel}               % Define el idioma del documento en español
 
 % INFORMACIÓN DEL DOCUMENTO
 \newcommand{\nombrealumno}{Pablo Pizarro R.}
@@ -64,11 +65,11 @@
 \newcommand{\defaultnewlinesize}{11pt}            % Tamaño del salto de línea
 \newcommand{\defaultinterlind}{1.0}               % Entrelineado por defecto
 \newcommand{\defaultimagefolder}{images/}         % Directorio de las imágenes 
-\newcommand{\tipofuentetitulo}{\huge}             % Tamaño de los títulos
+\newcommand{\tipofuentetitulo}{\LARGE}            % Tamaño de los títulos
 \newcommand{\tipofuentesubtitulo}{\Large}         % Tamaño de los subtítulos
 \newcommand{\tipofuentesubsubtitulo}{\large}      % Tamaño de los sub-subtítulos
-\newcommand{\tipofuentetituloi}{\huge}            % Tamaño de los títulos en el índice
-\newcommand{\tipofuentesubtituloi}{\large}        % Tamaño de los subtítulos en el índice
+\newcommand{\tipofuentetituloi}{\LARGE}           % Tamaño de los títulos en el índice
+\newcommand{\tipofuentesubtituloi}{\Large}        % Tamaño de los subtítulos en el índice
 \newcommand{\tipofuentesubsubtituloi}{\large}     % Tamaño de los sub-subtítulos en el índice
 \newcommand{\etipofuentetitulo}{\bfseries}        % Estilo de los títulos
 \newcommand{\etipofuentesubtitulo}{\bfseries}     % Estilo de los subtítulos
@@ -84,15 +85,15 @@
 \newcommand{\nombltwfigura}{Figura}               % Nombre de las figuras
 \newcommand{\indexdepth}{3}                       % Profundidad del índice
 \newcommand{\defaultcaptionmargin}{2.9}           % Márgenes de las leyendas por defecto
-\newcommand{\defaultpagemarginleft}{1.5}          % Margen izquierdo de las páginas [cm]
-\newcommand{\defaultpagemarginright}{1.5}         % Margen derecho de las páginas [cm]
-\newcommand{\defaultpagemargintop}{2.15}          % Margen superior de las páginas [cm]
-\newcommand{\defaultpagemarginbottom}{2.15}       % Margen inferior de las páginas [cm]
-\newcommand{\defaultfirstpagemargintop}{3.2}      % Margen superior de la portada [cm]
+\newcommand{\defaultpagemarginleft}{2.5}          % Margen izquierdo de las páginas [cm]
+\newcommand{\defaultpagemarginright}{2.5}         % Margen derecho de las páginas [cm]
+\newcommand{\defaultpagemargintop}{3.0}           % Margen superior de las páginas [cm]
+\newcommand{\defaultpagemarginbottom}{2.7}        % Margen inferior de las páginas [cm]
+\newcommand{\defaultfirstpagemargintop}{3.4}      % Margen superior de la portada [cm]
 \newcommand{\defaultmarginfloatimages}{-13pt}     % Margen sup. de figuras flotantes [pt]
 \newcommand{\defaultmargintopimages}{-0.2cm}      % Margen sup. de las figuras [cm]
 \newcommand{\defaultmarginbottomimages}{-0.2cm}   % Margen inf. de las figuras [cm]
-\newcommand{\nombrepaginaportada}{P}              % Nombre de la primera página (portada)
+\newcommand{\nombrepaginaportada}{P}              % Identificador de la primera página (portada)
 
 % LIBRERÍAS INDEPENDIENTES
 \usepackage{amsmath}                  % Fórmulas matemáticas
@@ -113,12 +114,13 @@
 \usepackage{mathtools}                % Permite utilizar notaciones matemáticas avanzadas
 \usepackage[version=4]{mhchem}        % Fórmulas químicas
 \usepackage{multicol}                 % Múltiples columnas
+\usepackage{pdfpages}                 % Permite administrar páginas en pdf
 \usepackage{lipsum}                   % Permite crear textos dummy
 \usepackage{longtable}                % Permite utilizar tablas en varias hojas
 \usepackage{listings}                 % Permite añadir código fuente
 \usepackage{sectsty}                  % Cambia el estilo de los títulos
 \usepackage{setspace}                 % Cambia el espacio entre líneas
-\usepackage{subcaption}               % Permite agrupar imágenes
+\usepackage{subfig}                   % Permite agrupar imágenes
 \usepackage{tikz}                     % Permite dibujar 
 \usepackage{ulem}                     % Permite tachar, subrayar, etc
 \usepackage{url}                      % Permite añadir enlaces
@@ -154,11 +156,11 @@
 \newcommand{\fracnpartial}[3]{        % Fracción de derivadas parciales en n a^n/ax^n
 	\frac{{\partial}^{#3} #1}{\partial {#2}^{#3}}}
 \newcommand{\fracderivat}[2]{         % Fracción de derivadas df/dx
-	\frac{d #1}{d #2}}
+	\frac{\text{d} #1}{\text{d} #2}}
 \newcommand{\fracdderivat}[2]{        % Fracción de derivadas dobles d^2/dx^2
-	\frac{{d}^{2} #1}{d {#2}^{2}}}
+	\frac{{\text{d}}^{2} #1}{\text{d} {#2}^{2}}}
 \newcommand{\fracnderivat}[3]{        % Fracción de derivadas en n d^n/dx^n
-	\frac{{d}^{#3} #1}{d {#2}^{#3}}}
+	\frac{{\text{d}}^{#3} #1}{\text{d} {#2}^{#3}}}
 \newcommand{\topequal}[2]{            % Llave superior de equivalencia
 	\overbrace{#1}^{\mathclap{#2}}}
 \newcommand{\underequal}[2]{          % Llave inferior de equivalencia
@@ -176,11 +178,12 @@
 \newcommand{\newsubtitleanumnoi}[1]{  % Insertar un subtítulo sin número sin indexar
 	\subsection*{#1}}
 \newcommand{\insertequation}[2][]{    % Insertar una ecuación
-	\vspace{-0.18cm}
+	\vspace{-0.16cm}
 	\begin{equation}
 		\text{#1} #2
-	\end{equation}}
-	\vspace{0.18cm}
+	\end{equation}
+	\par
+}
 \newcommand{\insertequationcaptioned}[3][]{ % Insertar una ecuación con leyenda
 	\vspace{-0.1cm}
 	\begin{equation}
@@ -188,8 +191,10 @@
 	\end{equation}
 	\begin{center}
 		\vspace{-0.15cm}
-		\textit{#3} \par
-	\end{center}}
+		\textit{#3}
+	\end{center}
+	\par
+}
 \newcommand{\insertimage}[4][]{ % Insertar una imagen
 	\vspace{\defaultmargintopimages}
 	\begin{figure}[H]
@@ -197,7 +202,8 @@
 		\includegraphics[#3]{\defaultimagefolder#2}
 		\caption{#4 #1}
 	\end{figure}
-	\vspace{\defaultmarginbottomimages}}
+	\vspace{\defaultmarginbottomimages}
+}
 \newcommand{\insertimageboxed}[4][]{ % Insertar una imagen con recuadro
 	\vspace{\defaultmargintopimages}
 	\begin{figure}[H]
@@ -205,7 +211,8 @@
 		\fbox{\includegraphics[#3]{\defaultimagefolder#2}}
 		\caption{#4 #1}
 	\end{figure}
-	\vspace{\defaultmarginbottomimages}}
+	\vspace{\defaultmarginbottomimages}
+}
 \newcommand{\insertimagefixed}[5][]{ % Insertar una imagen de ancho fijo a la página
 	\vspace{\defaultmargintopimages}
 	\begin{figure}[H]
@@ -215,7 +222,8 @@
 		}
 		\caption{#5 #1}
 	\end{figure}
-	\vspace{\defaultmarginbottomimages}}
+	\vspace{\defaultmarginbottomimages}
+}
 \newcommand{\insertimageboxedfixed}[5][]{ % Insertar una imagen recuadrada de ancho fijo
 	\vspace{\defaultmargintopimages}
 	\begin{figure}[H]
@@ -225,7 +233,8 @@
 		}
 		\caption{#5 #1}
 	\end{figure}
-	\vspace{\defaultmarginbottomimages}}
+	\vspace{\defaultmarginbottomimages}
+}
 \newcommand{\insertdoubleimage}[8][]{ % Insertar una imagen doble
 	\captionsetup{margin=0.5cm}
 	\vspace{\defaultmargintopimages}
@@ -238,7 +247,8 @@
 		\caption{#8 #1}
 	\end{figure}
 	\vspace{\defaultmarginbottomimages}
-	\setcaptionmargincm{\defaultcaptionmargin}}
+	\setcaptionmargincm{\defaultcaptionmargin}
+}
 \newcommand{\insertimageleft}[5][]{ % Insertar una imagen a la izquierda
 	\begin{wrapfigure}[#5]{l}{#3\textwidth}
 		\setcaptionmargincm{0}
@@ -246,7 +256,8 @@
 		\centering\includegraphics[width=\linewidth]{\defaultimagefolder#2}
 		\caption{#4 #1}
 		\setcaptionmargincm{\defaultcaptionmargin}
-	\end{wrapfigure}}
+	\end{wrapfigure}
+}
 \newcommand{\insertimageright}[5][]{ % Insertar una imagen a la derecha
 	\begin{wrapfigure}[#5]{r}{#3\textwidth}
 		\setcaptionmargincm{0}
@@ -254,7 +265,8 @@
 		\centering\includegraphics[width=\linewidth]{\defaultimagefolder#2}
 		\caption{#4 #1}
 		\setcaptionmargincm{\defaultcaptionmargin}
-	\end{wrapfigure}}
+	\end{wrapfigure}
+}
 
 % DECLARACIÓN DE AMBIENTES Y ESTILOS
 \definecolor{dkgreen}{rgb}{0,0.6,0}
@@ -309,13 +321,14 @@
 	emph=[1]{for,end,break},emphstyle=[1]\color{red}}
 
 % CONFIGURACIÓN INICIAL DEL DOCUMENTO
-\counterwithin{equation}{section}           % Añade número de sección a las ecuaciones
-\counterwithin{figure}{section}             % Añade número de sección a las figuras
-\counterwithin{table}{section}              % Añade número de sección a las tablas
-\bibliographystyle{\tiporeferencias}        % Estilo APA para las referencias
-\setcaptionmargincm{\defaultcaptionmargin}  % Margen por defecto
-\setlength{\headheight}{54pt}               % Tamaño de la cabecera sin fancyhdr
-\setcounter{tocdepth}{\indexdepth}          % Se ajusta la profundidad del índice
+\decimalpoint                              % Se define el punto decimal
+\counterwithin{equation}{section}          % Añade número de sección a las ecuaciones
+\counterwithin{figure}{section}            % Añade número de sección a las figuras
+\counterwithin{table}{section}             % Añade número de sección a las tablas
+\bibliographystyle{\tiporeferencias}       % Estilo APA para las referencias
+\setcaptionmargincm{\defaultcaptionmargin} % Margen por defecto
+\setlength{\headheight}{54pt}              % Tamaño de la cabecera sin fancyhdr
+\setcounter{tocdepth}{\indexdepth}         % Se ajusta la profundidad del índice
 \hypersetup{
 	%pdfauthor={Author},
 	pdftitle={\nombredelinforme},
@@ -324,8 +337,8 @@
 	\codigodelcurso, \localizacionuniversidad},
 	pdfproducer={LaTeX},
 	pdfcreator={pdfLaTeX}}
-\renewcommand{\baselinestretch}{\defaultinterlind}   % Ajuste del entrelineado
-\makeatletter \renewenvironment{thebibliography}[1]  % Bibliografía en 2 columnas
+\renewcommand{\baselinestretch}{\defaultinterlind}  % Ajuste del entrelineado
+\makeatletter \renewenvironment{thebibliography}[1] % Bibliografía en 2 columnas
 {\begin{multicols}{2}[\section*{\refname}]
 	\@mkboth{\MakeUppercase\refname}{\MakeUppercase\refname}
 	\list{\@biblabel{\@arabic\c@enumiv}}
@@ -374,7 +387,7 @@
 \setcounter{page}{1}
 \setpagemargincm{\defaultpagemarginleft}{\defaultpagemargintop}
 {\defaultpagemarginright}{\defaultpagemarginbottom}
-\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}}      % Se modifica el estilo del header
 \renewcommand{\listfigurename}{\nombltfiguras}       % Nombre del índice de figuras
 \renewcommand{\listtablename}{\nomblttablas}         % Nombre del índice de tablas
 \renewcommand{\contentsname}{\nombltcontend}         % Nombre del índice
@@ -382,7 +395,7 @@
 \renewcommand{\figurename}{\nombltwfigura}           % Nombre de la leyenda de las figuras
 \pagestyle{fancy} \fancyhf{}                         % Se crean los headers y footers
 \fancyhead[L]{\nouppercase{\rightmark}}              % Header izq, nombre sección
-\fancyhead[R]{\small \rm \thepage}                   % Header der, número página
+\fancyhead[R]{\small \rm \nouppercase{\thepage}}     % Header der, número página
 \fancyfoot[L]{\small \rm \textit{\nombredelinforme}} % Footer izq, título del informe
 \fancyfoot[R]{\small \rm \textit{\codigodelcurso \ \nombredelcurso}} % Footer der, curso
 \renewcommand{\headrulewidth}{0.5pt}                 % Ancho de la barra del header
@@ -399,16 +412,15 @@
 
 % CONFIGURACIONES FINALES - INICIO DE LAS SECCIONES
 \newpage
+\fancyhead[L]{\nouppercase{\leftmark}}
 \sectionfont{\tipofuentetitulo \etipofuentetitulo \selectfont}
 \subsectionfont{\tipofuentesubtitulo \etipofuentesubtitulo \selectfont}
 \subsubsectionfont{\tipofuentesubsubtitulo \etipofuentesubsubtitulo \selectfont}
-\setcounter{page}{1}
 \renewcommand{\thepage}{\arabic{page}}
+\setcounter{page}{1}
 
 
 % ================================ INICIO DEL DOCUMENTO ================================
-
-hola
 
 % FIN DEL DOCUMENTO
 \end{document}
